@@ -52,7 +52,7 @@ During the pipeline execution, we can check the security checks pased to our tfs
 
 ![tfsec_output](images/tfsec_output.png)
 
-This configuration is running inside of an AWS Codebuild Container ith the configuration stated at [buildspec_tfsec](terraform_pipeline/terraform_pipeline_stack.py#L53-90). We highly recommend you to check the [tfsec documentation](https://tfsec.dev/docs/aws/home/) to review the configuration and modify as you need.
+This configuration is running inside of an AWS Codebuild Container ith the configuration stated at [buildspec_tfsec](terraform_pipeline/terraform_pipeline_stack.py#L53-#L90). We highly recommend you to check the [tfsec documentation](https://tfsec.dev/docs/aws/home/) to review the configuration and modify as you need.
 
 Besides this output, AWS Codebuild also exports the result of tfsec report on the Codebuild reports section
 
@@ -64,7 +64,7 @@ Our pipeline have several manual process:
 
 ![terraform_pipeline](images/terraform_pipeline.png)
 
-Bear in mind that AWS CodeBuild needs permissions to create AWS Resources. In this example, we have stated [ec2:*](terraform_pipeline/terraform_pipeline_stack.py#L144-152) permissions, but this must be modified based on the resources that we will need to create using Terraform. You can check the CDK code permissions (here)(terraform_pipeline/terraform_pipeline_stack.py)
+Bear in mind that AWS CodeBuild needs permissions to create AWS Resources. In this example, we have stated [ec2:*](terraform_pipeline/terraform_pipeline_stack.py#L144-#L152) permissions, but this must be modified based on the resources that we will need to create using Terraform. You can check the CDK code permissions (here)(terraform_pipeline/terraform_pipeline_stack.py)
 
 ###  Clean up
 After completing your demo, delete your stack using the CDK cli:
