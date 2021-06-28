@@ -21,6 +21,7 @@ We can start deploying the infrastructure using the CDK cli:
 ```
 git clone https://github.com/aws-samples/aws-cdk-tfsec
 cd aws-cdk-tfsec
+pip install -r requirements.txt
 cdk bootstrap aws://account_id/eu-west-1
 cdk deploy --all
 ```
