@@ -1,11 +1,11 @@
 -e .
 pytest
-aws_cdk.aws_codecommit
-aws_cdk.aws_codepipeline
-aws_cdk.aws_codebuild
-aws_cdk.aws_cloudwatch
-aws_cdk.aws_codepipeline_actions
-aws_cdk.pipelines
-aws_cdk.aws_ecr 
-aws_cdk.aws_iam
-aws_cdk.core
+aws_cdk.aws_codecommit==1.103.0
+aws_cdk.aws_codepipeline==1.103.0
+aws_cdk.aws_codebuild==1.103.0
+aws_cdk.aws_cloudwatch==1.103.0
+aws_cdk.aws_codepipeline_actions==1.103.0
+aws_cdk.pipelines==1.103.0
+aws_cdk.aws_ecr==1.103.0
+aws_cdk.aws_iam==1.103.0
+aws_cdk.core==1.103.0

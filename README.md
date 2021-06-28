@@ -2,23 +2,24 @@
 The purpose of this repository is to demo how can we analyze and securize our Terraform code using a CI/CD Pipeline with a fully AWS services managed.
 
 #### Requirements
-  - CDK installed: [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)
+  - CDK installed: [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) (Ensure the minimal version 1.103.0 to make it working)
   - AWS Account
   - IAM User or IAM role with permissions to create AWS Resources.
-  - Python CDK required libraries: (install with pip install -r requirements.txt)
   - Git installed: [Git installation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
   - Clone this repo! : `git clone https://github.com/aws-samples/aws-cdk-tfsec`
+  - Python CDK required libraries: (install with pip install -r requirements.txt)
 
 ### Architecture
 ![tfsec-architecture](images/tfsec.png)
 
 ###  Provisioning the infrastructure
 
-First of all, we must to be sure that we have an IAM user or a role that could be assumed with permissions to create AWS Resources to crea
+First of all, we must to be sure that we have an IAM user or a role that could be assumed with permissions to create AWS Resources to create
 
 We can start deploying the infrastructure using the CDK cli:
 
 ```
+git clone https://github.com/aws-samples/aws-cdk-tfsec
 cdk bootstrap aws://account_id/eu-west-1
 cdk deploy --all
 ```
@@ -26,11 +27,12 @@ The infrastructure creation takes around 15/20 min due the AWS Codepipelines and
 Like this:
 ```
 git clone https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/awsome-terraform-example-container
-git checkout main
-cp repos/docker_image/* awsome-terraform-example-container/
+git checkout -b main
+cd awsome-terraform-example-container
+cp repos/docker_image/* .
 git add .
 git commit -am "First commit"
-git push 
+git push origin main
 ```
 Once our Docker image is built and pushed to the Amazon ECR, we can proceed with our Terraform repo
 
@@ -39,11 +41,12 @@ Once our Docker image is built and pushed to the Amazon ECR, we can proceed with
 Like this:
 ```
 git clone https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/awsome-terraform-example
-git checkout main
-cp -aR repos/terraform_code/* awsome-terraform-example/
+git checkout -b main
+cd awsome-terraform-example
+cp -aR repos/terraform_code/* .
 git add .
 git commit -am "First commit"
-git push 
+git push origin main
 ```
 
 ### Check our Terraform Pipeline
