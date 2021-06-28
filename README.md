@@ -2,7 +2,7 @@
 The purpose of this repository is to demo how can we analyze and securize our Terraform code using a CI/CD Pipeline with a fully AWS services managed.
 
 #### Requirements
-  - CDK installed: [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) (Ensure the minimal version 1.103.0 to make it working)
+  - CDK installed: [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html) (Ensure the minimal version 1.103.0 to make it works)
   - AWS Account
   - IAM User or IAM role with permissions to create AWS Resources.
   - Git installed: [Git installation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
@@ -29,7 +29,7 @@ Like this:
 git clone https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/awsome-terraform-example-container
 git checkout -b main
 cd awsome-terraform-example-container
-cp repos/docker_image/* .
+cp -aR repos/docker_image/* .
 git add .
 git commit -am "First commit"
 git push origin main
